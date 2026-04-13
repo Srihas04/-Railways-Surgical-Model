@@ -1,5 +1,9 @@
+# torch + torchvision are installed BEFORE this file in the Dockerfile
+# using the CPU-only index. Do NOT add them here or pip will upgrade
+# to the full CUDA build and blow past the 4 GB limit.
+
 flask>=3.0.0
+gunicorn>=21.2.0
 ultralytics>=8.2.0
 opencv-python-headless>=4.9.0
 numpy>=1.26.0
-gunicorn>=21.2.0
