@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+sg_output/
+*.mp4
+*.avi
+# Don't ignore best.pt - it needs to be in the repo
+# If best.pt is >100MB use Git LFS (see README)

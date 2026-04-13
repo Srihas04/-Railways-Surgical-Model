@@ -1,0 +1,9 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "gunicorn surgical_guardian_web:app --workers 1 --threads 4 --bind 0.0.0.0:$PORT --timeout 120 --preload"
+healthcheckPath = "/"
+healthcheckTimeout = 60
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
