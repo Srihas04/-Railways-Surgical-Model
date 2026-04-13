@@ -1,8 +1,10 @@
 [build]
-builder = "NIXPACKS"
+# Use our Dockerfile instead of Nixpacks auto-detection.
+# This is REQUIRED to get CPU-only PyTorch and stay under 4 GB.
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
 
 [deploy]
-startCommand = "gunicorn surgical_guardian_web:app --workers 1 --threads 4 --bind 0.0.0.0:$PORT --timeout 120 --preload"
 healthcheckPath = "/"
 healthcheckTimeout = 60
 restartPolicyType = "ON_FAILURE"
