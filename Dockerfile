@@ -46,9 +46,4 @@ ENV FRAME_HEIGHT=480
 
 EXPOSE 8080
 
-CMD gunicorn surgical_guardian_web:app \
-    --workers 1 \
-    --threads 4 \
-    --bind 0.0.0.0:$PORT \
-    --timeout 120 \
-    --preload
+CMD ["sh", "-c", "gunicorn surgical_guardian_web:app --workers 1 --threads 4 --bind 0.0.0.0:$PORT --timeout 120 --preload"]
